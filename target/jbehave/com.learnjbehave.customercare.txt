@@ -1,0 +1,39 @@
+
+(com/learnjbehave/customercare.story)
+Narrative:
+In order to check the customer care page
+As a Test team
+I want to login into flipkart and needs to navigate to customer care page and check
+Scenario: customer care page checks
+Examples:
+Given The browser <browsertype> is opened
+Then User opens the <URL>
+Then user clicks on the customercare link
+Then user select the case as <case_type>
+Then user selects the <question_number>
+Then user ends the test case and closed the browser
+
+|browsertype|URL|case_type|question_number|
+|Firefox|http://www.flipkart.com/|Offers Redemption|2|
+|Firefox|http://www.flipkart.com/|Offer Redemption|4|
+
+Example: {browsertype=Firefox, URL=http://www.flipkart.com/, case_type=Offers Redemption, question_number=2}
+Given The browser Firefox is opened
+Then User opens the http://www.flipkart.com/
+Then user clicks on the customercare link
+Then user select the case as Offers Redemption
+Then user selects the 2 (FAILED)
+(java.lang.IndexOutOfBoundsException: Index: 1, Size: 0)
+Then user ends the test case and closed the browser (NOT PERFORMED)
+
+Example: {browsertype=Firefox, URL=http://www.flipkart.com/, case_type=Offer Redemption, question_number=4}
+Given The browser Firefox is opened
+Then User opens the http://www.flipkart.com/
+Then user clicks on the customercare link
+Then user select the case as Offer Redemption
+Then user selects the 4 (FAILED)
+(java.lang.IndexOutOfBoundsException: Index: 3, Size: 3)
+Then user ends the test case and closed the browser (NOT PERFORMED)
+
+
+
